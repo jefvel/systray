@@ -65,6 +65,7 @@
 
 - (void)setIcon:(NSImage *)image {
   statusItem.button.image = image;
+  statusItem.button.imagePosition = NSImageLeft;
 }
 
 - (void)setTitle:(NSString *)title {
@@ -97,9 +98,9 @@
   }
   [menuItem setToolTip:item->tooltip];
   if (item->disabled == 1) {
-    [menuItem setEnabled:FALSE];
+    menuItem.enabled = FALSE;
   } else {
-    [menuItem setEnabled:TRUE];
+    menuItem.enabled = TRUE;
   }
   if (item->checked == 1) {
     menuItem.state = NSControlStateValueOn;
